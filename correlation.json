@@ -1,0 +1,496 @@
+{
+  "nodes": [
+    {
+      "id": "AUDJPY",
+      "group": 1
+    },
+    {
+      "id": "AUDSGD",
+      "group": 1
+    },
+    {
+      "id": "CADCHF",
+      "group": 1
+    },
+    {
+      "id": "CADHKD",
+      "group": 1
+    },
+    {
+      "id": "CADJPY",
+      "group": 1
+    },
+    {
+      "id": "CHFJPY",
+      "group": 1
+    },
+    {
+      "id": "CHFZAR",
+      "group": 1
+    },
+    {
+      "id": "EURGBP",
+      "group": 1
+    },
+    {
+      "id": "EURHUF",
+      "group": 1
+    },
+    {
+      "id": "EURNOK",
+      "group": 1
+    },
+    {
+      "id": "EURTRY",
+      "group": 1
+    },
+    {
+      "id": "EURZAR",
+      "group": 1
+    },
+    {
+      "id": "GBPAUD",
+      "group": 1
+    },
+    {
+      "id": "GBPCAD",
+      "group": 1
+    },
+    {
+      "id": "GBPCHF",
+      "group": 1
+    },
+    {
+      "id": "GBPHKD",
+      "group": 1
+    },
+    {
+      "id": "GBPJPY",
+      "group": 1
+    },
+    {
+      "id": "GBPNZD",
+      "group": 1
+    },
+    {
+      "id": "GBPSGD",
+      "group": 1
+    },
+    {
+      "id": "GBPUSD",
+      "group": 1
+    },
+    {
+      "id": "GBPZAR",
+      "group": 1
+    },
+    {
+      "id": "HKDJPY",
+      "group": 1
+    },
+    {
+      "id": "NZDCAD",
+      "group": 1
+    },
+    {
+      "id": "NZDCHF",
+      "group": 1
+    },
+    {
+      "id": "NZDHKD",
+      "group": 1
+    },
+    {
+      "id": "NZDJPY",
+      "group": 1
+    },
+    {
+      "id": "NZDSGD",
+      "group": 1
+    },
+    {
+      "id": "NZDUSD",
+      "group": 1
+    },
+    {
+      "id": "SGDHKD",
+      "group": 1
+    },
+    {
+      "id": "SGDJPY",
+      "group": 1
+    },
+    {
+      "id": "TRYJPY",
+      "group": 1
+    },
+    {
+      "id": "USDCAD",
+      "group": 1
+    },
+    {
+      "id": "USDCNH",
+      "group": 1
+    },
+    {
+      "id": "USDCZK",
+      "group": 1
+    },
+    {
+      "id": "USDDKK",
+      "group": 1
+    },
+    {
+      "id": "USDHUF",
+      "group": 1
+    },
+    {
+      "id": "USDJPY",
+      "group": 1
+    },
+    {
+      "id": "USDMXN",
+      "group": 1
+    },
+    {
+      "id": "USDNOK",
+      "group": 1
+    },
+    {
+      "id": "USDPLN",
+      "group": 1
+    },
+    {
+      "id": "USDSEK",
+      "group": 1
+    },
+    {
+      "id": "USDSGD",
+      "group": 1
+    },
+    {
+      "id": "USDTRY",
+      "group": 1
+    },
+    {
+      "id": "USDZAR",
+      "group": 1
+    },
+    {
+      "id": "AUDCHF",
+      "group": 1
+    },
+    {
+      "id": "AUDHKD",
+      "group": 1
+    },
+    {
+      "id": "AUDUSD",
+      "group": 1
+    },
+    {
+      "id": "CHFHKD",
+      "group": 1
+    },
+    {
+      "id": "EURCHF",
+      "group": 1
+    },
+    {
+      "id": "EURCZK",
+      "group": 1
+    },
+    {
+      "id": "EURDKK",
+      "group": 1
+    },
+    {
+      "id": "EURHKD",
+      "group": 1
+    },
+    {
+      "id": "EURJPY",
+      "group": 1
+    },
+    {
+      "id": "EURPLN",
+      "group": 1
+    },
+    {
+      "id": "EURUSD",
+      "group": 1
+    },
+    {
+      "id": "GBPPLN",
+      "group": 1
+    },
+    {
+      "id": "SGDCHF",
+      "group": 1
+    },
+    {
+      "id": "USDCHF",
+      "group": 1
+    },
+    {
+      "id": "USDTHB",
+      "group": 1
+    },
+    {
+      "id": "ZARJPY",
+      "group": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "AUDJPY",
+      "target": "CADJPY",
+      "coefficient": 50.49999999999997
+    },
+    {
+      "source": "AUDSGD",
+      "target": "NZDSGD",
+      "coefficient": 8.500000000000014
+    },
+    {
+      "source": "CADCHF",
+      "target": "CADJPY",
+      "coefficient": 46.499999999999986
+    },
+    {
+      "source": "CADHKD",
+      "target": "CADJPY",
+      "coefficient": 36.000000000000014
+    },
+    {
+      "source": "CHFJPY",
+      "target": "AUDJPY",
+      "coefficient": 41.000000000000014
+    },
+    {
+      "source": "CHFZAR",
+      "target": "EURZAR",
+      "coefficient": 73.50000000000001
+    },
+    {
+      "source": "EURGBP",
+      "target": "CADJPY",
+      "coefficient": -42.99999999999997
+    },
+    {
+      "source": "EURHUF",
+      "target": "USDHUF",
+      "coefficient": 68.99999999999999
+    },
+    {
+      "source": "EURNOK",
+      "target": "GBPAUD",
+      "coefficient": 7.5
+    },
+    {
+      "source": "EURTRY",
+      "target": "USDTRY",
+      "coefficient": 57.99999999999997
+    },
+    {
+      "source": "GBPAUD",
+      "target": "EURGBP",
+      "coefficient": -71.00000000000001
+    },
+    {
+      "source": "GBPCAD",
+      "target": "CHFJPY",
+      "coefficient": 2.0000000000000284
+    },
+    {
+      "source": "GBPCHF",
+      "target": "AUDJPY",
+      "coefficient": 5.499999999999972
+    },
+    {
+      "source": "GBPHKD",
+      "target": "CADJPY",
+      "coefficient": 31.499999999999986
+    },
+    {
+      "source": "GBPJPY",
+      "target": "AUDJPY",
+      "coefficient": 28.500000000000014
+    },
+    {
+      "source": "GBPNZD",
+      "target": "EURGBP",
+      "coefficient": -80
+    },
+    {
+      "source": "GBPSGD",
+      "target": "CADJPY",
+      "coefficient": 21.000000000000014
+    },
+    {
+      "source": "GBPUSD",
+      "target": "AUDJPY",
+      "coefficient": 3.999999999999986
+    },
+    {
+      "source": "GBPZAR",
+      "target": "EURNOK",
+      "coefficient": 13.500000000000014
+    },
+    {
+      "source": "HKDJPY",
+      "target": "AUDJPY",
+      "coefficient": 42.00000000000003
+    },
+    {
+      "source": "NZDCAD",
+      "target": "NZDSGD",
+      "coefficient": 20.49999999999997
+    },
+    {
+      "source": "NZDCHF",
+      "target": "AUDCHF",
+      "coefficient": 32.00000000000003
+    },
+    {
+      "source": "NZDHKD",
+      "target": "AUDHKD",
+      "coefficient": 25.49999999999997
+    },
+    {
+      "source": "NZDJPY",
+      "target": "AUDJPY",
+      "coefficient": 77.99999999999997
+    },
+    {
+      "source": "NZDUSD",
+      "target": "AUDHKD",
+      "coefficient": 40
+    },
+    {
+      "source": "SGDHKD",
+      "target": "AUDJPY",
+      "coefficient": 10.499999999999972
+    },
+    {
+      "source": "SGDJPY",
+      "target": "AUDJPY",
+      "coefficient": 52.5
+    },
+    {
+      "source": "TRYJPY",
+      "target": "USDTRY",
+      "coefficient": -18.999999999999986
+    },
+    {
+      "source": "USDCAD",
+      "target": "CADHKD",
+      "coefficient": -96.00000000000001
+    },
+    {
+      "source": "USDCNH",
+      "target": "AUDJPY",
+      "coefficient": -67.00000000000003
+    },
+    {
+      "source": "USDCZK",
+      "target": "EURNOK",
+      "coefficient": -20.49999999999997
+    },
+    {
+      "source": "USDDKK",
+      "target": "EURUSD",
+      "coefficient": -97.5
+    },
+    {
+      "source": "USDJPY",
+      "target": "AUDJPY",
+      "coefficient": 33.500000000000014
+    },
+    {
+      "source": "USDMXN",
+      "target": "AUDJPY",
+      "coefficient": -39.50000000000003
+    },
+    {
+      "source": "USDNOK",
+      "target": "EURNOK",
+      "coefficient": 33.999999999999986
+    },
+    {
+      "source": "USDPLN",
+      "target": "EURPLN",
+      "coefficient": 77.00000000000003
+    },
+    {
+      "source": "USDSEK",
+      "target": "AUDHKD",
+      "coefficient": -16.499999999999986
+    },
+    {
+      "source": "USDSGD",
+      "target": "AUDJPY",
+      "coefficient": -33.999999999999986
+    },
+    {
+      "source": "USDZAR",
+      "target": "CHFZAR",
+      "coefficient": 82.99999999999997
+    },
+    {
+      "source": "AUDCHF",
+      "target": "AUDHKD",
+      "coefficient": 23.500000000000014
+    },
+    {
+      "source": "AUDUSD",
+      "target": "AUDCHF",
+      "coefficient": 30.49999999999997
+    },
+    {
+      "source": "CHFHKD",
+      "target": "USDCHF",
+      "coefficient": -92.99999999999997
+    },
+    {
+      "source": "EURCHF",
+      "target": "EURJPY",
+      "coefficient": 45
+    },
+    {
+      "source": "EURCZK",
+      "target": "USDTHB",
+      "coefficient": 26.499999999999986
+    },
+    {
+      "source": "EURDKK",
+      "target": "SGDCHF",
+      "coefficient": 28.500000000000014
+    },
+    {
+      "source": "EURHKD",
+      "target": "EURUSD",
+      "coefficient": 96.00000000000001
+    },
+    {
+      "source": "EURPLN",
+      "target": "EURCHF",
+      "coefficient": -27.99999999999997
+    },
+    {
+      "source": "GBPPLN",
+      "target": "GBPAUD",
+      "coefficient": 11.000000000000014
+    },
+    {
+      "source": "SGDCHF",
+      "target": "EURCHF",
+      "coefficient": 22.00000000000003
+    },
+    {
+      "source": "ZARJPY",
+      "target": "AUDCHF",
+      "coefficient": 21.000000000000014
+    }
+  ]
+}
