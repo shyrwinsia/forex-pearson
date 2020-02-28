@@ -38,6 +38,7 @@ $ yarn dist
 
 - [ ] Add filters in the UI
 - [ ] Add 5 min, 1 hr, 4 hr timeframe
+- [ ] Add refresh rate with the time frame
 - [x] Create as Electron Standalone
 - [x] Package with Parcel
 - [ ] Create installer for Windows and Mac
