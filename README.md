@@ -19,31 +19,27 @@ You need to have npm installed. You can download it [here](https://nodejs.org/en
 To install the dependencies, run this command:
 
 ```
-npm install
+$ yarn
 ```
 
-The source code is written in Typescript so it has to be translated to Javascript. To do this, run this command:
+For development, run this command:
 
 ```
-npm run-script build
+$ yarn start
 ```
 
-## Running
-
-To run the script, run this command:
+To bundle for production:
 
 ```
-npm start
+$ yarn dist
 ```
-
-Then run the index.html
 
 # Todo
 
 - [ ] Add filters in the UI
 - [ ] Add 5 min, 1 hr, 4 hr timeframe
-- [ ] Create as Electron Standalone
-- [ ] Package with Parcel
+- [x] Create as Electron Standalone
+- [x] Package with Parcel
 - [ ] Create installer for Windows and Mac
 
 ## License

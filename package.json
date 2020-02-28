@@ -1,12 +1,16 @@
 {
   "name": "forex-pearson",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Pearson correlation coefficient visualizer for forex pairs using force-directed graphs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc src/index.ts --outDir public",
-    "start": "node public/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepackage": "rimraf release",
+    "start": "electron .",
+    "package": "build",
+    "package:mac": "yarn run package --mac",
+    "package:win": "yarn run package --win --x64",
+    "package:all": "yarn run package -mw",
+    "release": "yarn run package:all --publish always"
   },
   "author": "Shyrwinsteel Sia",
   "license": "MIT",
