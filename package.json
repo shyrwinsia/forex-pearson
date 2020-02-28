@@ -2,7 +2,7 @@
   "name": "forex-pearson",
   "version": "0.1.1",
   "description": "Pearson correlation coefficient visualizer for forex pairs using force-directed graphs",
-  "main": "index.js",
+  "main": "src/main.js",
   "scripts": {
     "prepackage": "rimraf release",
     "start": "electron .",
@@ -14,12 +14,47 @@
   },
   "author": "Shyrwinsteel Sia",
   "license": "MIT",
+  "repository": "https://github.com/shyrwinsia/forex-pearson.git",
+  "staticFiles": {
+    "staticPath": "static",
+    "watcherGlob": "**"
+  },
+  "build": {
+    "productName": "Forex Pearson Tool",
+    "appId": "forexpearson.ssia.dev",
+    "copyright": "Copyright © 2019 Shyrwinsteel Sia",
+    "releaseInfo": {
+      "releaseName": "${name}-v${version}"
+    },
+    "files": [
+      "src/**/*",
+      "static/**/*"
+    ],
+    "directories": {
+      "buildResources": "resources",
+      "output": "release"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "default"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^3.6.4",
+    "electron": "^4.2.12",
+    "electron-builder": "^20.44.4"
+  },
   "dependencies": {
     "@types/node": "^12.12.3",
     "request": "^2.88.0",
-    "request-promise": "^4.2.4"
-  },
-  "devDependencies": {
-    "typescript": "^3.6.4"
+    "request-promise": "^4.2.4",
+    "electron-is-dev": "^1.1.0",
+    "electron-updater": "^4.2.0",
+    "electron-window-state": "^5.0.3",
+    "nodemon": "^1.19.4",
+    "rimraf": "^2.6.3"
   }
 }

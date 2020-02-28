@@ -60,5 +60,7 @@ typings/
 # next.js build output
 .next
 
-
+release/
+build/
+node_modules/
 .json
