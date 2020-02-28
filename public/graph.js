@@ -1,30 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8" />
-<style>
-  .nodes circle {
-    stroke: white;
-    stroke-width: 2px;
-    transition: all 0.2s ease;
-  }
-
-  .nodes circle:hover {
-    cursor: pointer;
-  }
-
-  text {
-    font-family: sans-serif;
-    font-size: 12px;
-    transition: all 0.2s ease;
-  }
-
-  text:hover {
-    cursor: pointer;
-  }
-</style>
-<svg width="800" height="600" style="border:1px solid #ddd"></svg>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-
-<script>
+function renderGraph(json) {
   var svg = d3.select('svg'),
     width = +svg.attr('width'),
     height = +svg.attr('height');
@@ -175,4 +149,4 @@
       linkedById[`${d.source.id},${d.target.id}`] = 1;
     });
   });
-</script>
+}

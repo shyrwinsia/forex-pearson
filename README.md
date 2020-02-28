@@ -1,6 +1,6 @@
 # Forex Pearson
 
-![](demo.gif)
+![](img/demo.gif)
 
 This is a force-directed graph visualization of the Pearson Correlation Coefficient (PCC) of the world's top traded currency pairs. This can be used to provide insight on what pairs move the same way (or opposite) and calculate the risk accordingly.
 

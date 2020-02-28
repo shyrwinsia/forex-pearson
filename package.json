@@ -4,8 +4,8 @@
   "description": "Pearson correlation coefficient visualizer for forex pairs using force-directed graphs",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc index.ts",
-    "start": "node index.js",
+    "build": "tsc src/index.ts --outDir public",
+    "start": "node public/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shyrwinsteel Sia",
