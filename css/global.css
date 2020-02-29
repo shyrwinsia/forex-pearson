@@ -1,0 +1,22 @@
+.nodes circle {
+  stroke: white;
+  stroke-width: 2px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.nodes circle:hover {
+  cursor: pointer;
+}
+
+text {
+  font-family: sans-serif;
+  font-size: 12px;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+text:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=global.css.map */
