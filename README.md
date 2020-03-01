@@ -36,7 +36,7 @@ To bundle for production:
 $ yarn dist
 ```
 
-# Todo
+## Todo
 
 - [ ] Add filters in the UI
 - [ ] Add 5 min, 1 hr, 4 hr timeframe
@@ -44,6 +44,9 @@ $ yarn dist
 - [x] Create as Electron Standalone
 - [x] Package with Parcel
 - [ ] Create installer for Windows and Mac
+
+## Disclaimer
+The information from this tool is not intended as, and shall not be understood or construed as, financial advice. I am not an attorney or a financial advisor, nor am I holding myself out to be. The information from this tool is not a substitute for financial advice from a professional. Nothing from this tool should be understood as a recommendation that you should not consult a financial professional. It is expressly recommended to seek advice from a professional.
 
 ## License
 
