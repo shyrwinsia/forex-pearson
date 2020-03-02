@@ -2,7 +2,7 @@
 
 ![](img/demo.gif)
 
-_Click [here](https://github.com/shyrwinsia/forex-pearson-cli) for the command-line tool._
+_Click [here](https://github.com/shyrwinsia/fxpc) for the command-line tool._
 
 This is a force-directed graph visualization of the Pearson Correlation Coefficient (PCC) of the world's top traded currency pairs. This can be used to provide insight on what pairs move the same way (or opposite) and calculate the risk accordingly.
 
