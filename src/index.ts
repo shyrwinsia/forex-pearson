@@ -20,7 +20,7 @@ function processData(contents: string) {
   let rows: string[];
   let quotes = [];
   rows = contents.split('\n');
-  rows.map((i: string) => {
+  rows.forEach((i: string) => {
     let columns: string[];
     columns = i.split(',');
     let base: string = columns[0];
@@ -42,7 +42,7 @@ function filterData(quotes: object[], whitelist?: string[]) {
     return quotes;
   } else {
     console.log('Applying filters. Whitelist: ' + whitelist);
-    return quotes.filter(function(i) {
+    return quotes.filter(function (i) {
       if (
         whitelist.includes(i['base'].slice(0, 3)) &&
         whitelist.includes(i['base'].slice(-3)) &&
@@ -60,9 +60,9 @@ function constructJson(data: object[]) {
   let nodes = [];
   let links = [];
 
-  data.map(function(i) {
+  data.map(function (i) {
     if (
-      !nodes.find(function(j) {
+      !nodes.find(function (j) {
         if (i['base'] === j['id']) return true;
         else return false;
       })
@@ -70,7 +70,7 @@ function constructJson(data: object[]) {
       nodes.push({ id: i['base'], group: 1 });
       // check if a link between then source and destination has been created
       if (
-        !links.find(function(j) {
+        !links.find(function (j) {
           if (i['base'] === j['target'] && i['quote'] === j['source'])
             return true;
           else return false;
