@@ -1,3 +1,5 @@
+import { prototype } from 'events';
+
 const fs = require('fs');
 const request = require('request-promise');
 const { promisify } = require('util');
@@ -42,7 +44,7 @@ function filterData(quotes: object[], whitelist?: string[]) {
     return quotes;
   } else {
     console.log('Applying filters. Whitelist: ' + whitelist);
-    return quotes.filter(function(i) {
+    return quotes.filter(function (i) {
       if (
         whitelist.includes(i['base'].slice(0, 3)) &&
         whitelist.includes(i['base'].slice(-3)) &&
@@ -55,22 +57,38 @@ function filterData(quotes: object[], whitelist?: string[]) {
   }
 }
 
-function constructJson(data: object[]) {
+function constructJson(data: object[], portfolio: string[]) {
   console.log('Reticulating splines');
   let nodes = [];
   let links = [];
 
-  data.map(function(i) {
+  data.map(function (i) {
     if (
-      !nodes.find(function(j) {
+      !nodes.find(function (j) {
         if (i['base'] === j['id']) return true;
         else return false;
       })
     ) {
-      nodes.push({ id: i['base'], group: 1 });
+      // check if inside portfolio
+      let group = 1;
+      if (portfolio.length > 0) {
+        if (portfolio.find(function (j) {
+          if (i['base'] === j.toUpperCase())
+            return true;
+          else return false;
+        })) group = 2;
+
+        if (portfolio.find(function (j) {
+          if (i['quote'] === j.toUpperCase())
+            return true;
+          else return false;
+        })) group = 3;
+      }
+
+      nodes.push({ id: i['base'], group: group });
       // check if a link between then source and destination has been created
       if (
-        !links.find(function(j) {
+        !links.find(function (j) {
           if (i['base'] === j['target'] && i['quote'] === j['source'])
             return true;
           else return false;
@@ -96,10 +114,11 @@ async function main() {
     'https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv'
   );
   let quotes = processData(contents);
+  let portfolio = process.argv.splice(2);
 
-  let whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'SGD'];
-  let filtered = filterData(quotes);
-  let json = constructJson(filtered);
+  let whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'HKD'];
+  let filtered = filterData(quotes, whitelist);
+  let json = constructJson(filtered, portfolio);
   await writeJsonToFile(json);
 }
 

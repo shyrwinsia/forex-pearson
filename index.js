@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -34,6 +35,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+exports.__esModule = true;
 var fs = require('fs');
 var request = require('request-promise');
 var promisify = require('util').promisify;
@@ -104,7 +106,7 @@ function filterData(quotes, whitelist) {
         });
     }
 }
-function constructJson(data) {
+function constructJson(data, portfolio) {
     console.log('Reticulating splines');
     var nodes = [];
     var links = [];
@@ -115,7 +117,25 @@ function constructJson(data) {
             else
                 return false;
         })) {
-            nodes.push({ id: i['base'], group: 1 });
+            // check if inside portfolio
+            var group = 1;
+            if (portfolio.length > 0) {
+                if (portfolio.find(function (j) {
+                    if (i['base'] === j.toUpperCase())
+                        return true;
+                    else
+                        return false;
+                }))
+                    group = 2;
+                if (portfolio.find(function (j) {
+                    if (i['quote'] === j.toUpperCase())
+                        return true;
+                    else
+                        return false;
+                }))
+                    group = 3;
+            }
+            nodes.push({ id: i['base'], group: group });
             // check if a link between then source and destination has been created
             if (!links.find(function (j) {
                 if (i['base'] === j['target'] && i['quote'] === j['source'])
@@ -146,16 +166,17 @@ function writeJsonToFile(json) {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contents, quotes, whitelist, filtered, json;
+        var contents, quotes, portfolio, whitelist, filtered, json;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getCsvFromUrl('https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv')];
                 case 1:
                     contents = _a.sent();
                     quotes = processData(contents);
-                    whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'SGD'];
-                    filtered = filterData(quotes);
-                    json = constructJson(filtered);
+                    portfolio = process.argv.splice(2);
+                    whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'HKD'];
+                    filtered = filterData(quotes, whitelist);
+                    json = constructJson(filtered, portfolio);
                     return [4 /*yield*/, writeJsonToFile(json)];
                 case 2:
                     _a.sent();
