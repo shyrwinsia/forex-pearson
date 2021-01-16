@@ -1,0 +1,162 @@
+{
+  "nodes": [
+    {
+      "id": "EURUSD",
+      "group": 1
+    },
+    {
+      "id": "EURJPY",
+      "group": 1
+    },
+    {
+      "id": "CHFJPY",
+      "group": 1
+    },
+    {
+      "id": "NZDJPY",
+      "group": 1
+    },
+    {
+      "id": "AUDJPY",
+      "group": 1
+    },
+    {
+      "id": "CADJPY",
+      "group": 1
+    },
+    {
+      "id": "GBPJPY",
+      "group": 1
+    },
+    {
+      "id": "AUDNZD",
+      "group": 1
+    },
+    {
+      "id": "NZDCAD",
+      "group": 1
+    },
+    {
+      "id": "AUDCHF",
+      "group": 1
+    },
+    {
+      "id": "EURGBP",
+      "group": 1
+    },
+    {
+      "id": "EURCAD",
+      "group": 1
+    },
+    {
+      "id": "NZDCHF",
+      "group": 1
+    },
+    {
+      "id": "EURCHF",
+      "group": 1
+    },
+    {
+      "id": "GBPCAD",
+      "group": 1
+    },
+    {
+      "id": "GBPCHF",
+      "group": 1
+    },
+    {
+      "id": "CADCHF",
+      "group": 1
+    },
+    {
+      "id": "EURAUD",
+      "group": 1
+    },
+    {
+      "id": "GBPAUD",
+      "group": 1
+    }
+  ],
+  "links": [
+    {
+      "source": "EURUSD",
+      "target": "AUDNZD",
+      "coefficient": -41.499999999999986
+    },
+    {
+      "source": "EURJPY",
+      "target": "CHFJPY",
+      "coefficient": 63.999999999999986
+    },
+    {
+      "source": "NZDJPY",
+      "target": "EURJPY",
+      "coefficient": 47.99999999999997
+    },
+    {
+      "source": "AUDJPY",
+      "target": "CADJPY",
+      "coefficient": 19.50000000000003
+    },
+    {
+      "source": "GBPJPY",
+      "target": "AUDCHF",
+      "coefficient": 36.499999999999986
+    },
+    {
+      "source": "NZDCAD",
+      "target": "EURUSD",
+      "coefficient": 63.500000000000014
+    },
+    {
+      "source": "AUDCHF",
+      "target": "AUDJPY",
+      "coefficient": 27.00000000000003
+    },
+    {
+      "source": "EURGBP",
+      "target": "EURUSD",
+      "coefficient": 8.500000000000014
+    },
+    {
+      "source": "EURCAD",
+      "target": "EURUSD",
+      "coefficient": 25
+    },
+    {
+      "source": "NZDCHF",
+      "target": "NZDJPY",
+      "coefficient": 68.99999999999999
+    },
+    {
+      "source": "EURCHF",
+      "target": "EURJPY",
+      "coefficient": 72.99999999999997
+    },
+    {
+      "source": "GBPCAD",
+      "target": "GBPAUD",
+      "coefficient": 10.499999999999972
+    },
+    {
+      "source": "GBPCHF",
+      "target": "GBPJPY",
+      "coefficient": 72.99999999999997
+    },
+    {
+      "source": "CADCHF",
+      "target": "CADJPY",
+      "coefficient": 40.49999999999997
+    },
+    {
+      "source": "EURAUD",
+      "target": "GBPJPY",
+      "coefficient": -36.000000000000014
+    },
+    {
+      "source": "GBPAUD",
+      "target": "EURJPY",
+      "coefficient": -3.999999999999986
+    }
+  ]
+}

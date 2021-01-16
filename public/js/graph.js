@@ -1,4 +1,5 @@
 function renderGraph(json) {
+  console.log('asd')
   var svg = d3.select('svg'),
     width = +svg.attr('width'),
     height = +svg.attr('height');

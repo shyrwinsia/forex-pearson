@@ -2,9 +2,10 @@ const fs = require('fs');
 const request = require('request-promise');
 const { promisify } = require('util');
 const writeFile = promisify(fs.writeFile);
+const readFile = promisify(fs.readFile);
 
 async function getCsvFromUrl(url: string) {
-  console.log('Fetching from:  ' + url);
+  console.log('Fetching from: ' + url);
   let contents: string;
   try {
     let contents = await request(url);
@@ -36,27 +37,8 @@ function processData(contents: string) {
   return quotes;
 }
 
-function filterData(quotes: object[], whitelist?: string[]) {
-  if (!whitelist) {
-    console.log('Applying filters. No whitelist found! Showing everything.');
-    return quotes;
-  } else {
-    console.log('Applying filters. Whitelist: ' + whitelist);
-    return quotes.filter(function(i) {
-      if (
-        whitelist.includes(i['base'].slice(0, 3)) &&
-        whitelist.includes(i['base'].slice(-3)) &&
-        whitelist.includes(i['quote'].slice(0, 3)) &&
-        whitelist.includes(i['quote'].slice(-3))
-      ) {
-        return true;
-      } else return false;
-    });
-  }
-}
-
 function constructJson(data: object[]) {
-  console.log('Reticulating splines');
+  console.log('Constructing graph');
   let nodes = [];
   let links = [];
 
@@ -88,18 +70,26 @@ function constructJson(data: object[]) {
 }
 
 async function writeJsonToFile(json: object) {
-  await writeFile('correlation.json', JSON.stringify(json, null, 2));
+  await writeFile('public/correlation.json', JSON.stringify(json, null, 2));
 }
 
 async function main() {
-  let contents = await getCsvFromUrl(
-    'https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv'
-  );
-  let quotes = processData(contents);
 
-  let whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'SGD'];
-  let filtered = filterData(quotes);
-  let json = constructJson(filtered);
+  let fileContents =  await readFile('whitelist.txt', 'UTF-8');
+  const lines = fileContents.split(/\r?\n/);
+  let params = '';
+  lines.forEach((line) => {
+    console.log(line);
+    params += `${line}|`;
+  });
+  params = params.slice(0, -1);
+
+  let contents = await getCsvFromUrl(
+    'https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv?symbol=' + params
+  );
+
+  let quotes = processData(contents);
+  let json = constructJson(quotes);
   await writeJsonToFile(json);
 }
 

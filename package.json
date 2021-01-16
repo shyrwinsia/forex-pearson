@@ -4,14 +4,16 @@
   "description": "Pearson correlation coefficient visualizer for forex pairs using force-directed graphs",
   "main": "index.js",
   "scripts": {
-    "build": "tsc src/index.ts --outDir public",
-    "start": "node public/index.js",
+    "build": "tsc src/index.ts --outDir public && sass --no-source-map css/global.scss public/css/global.css",
+    "fetch": "node public/index.js",
+    "start": "http-server public/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shyrwinsteel Sia",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^12.12.3",
+    "line-reader": "^0.4.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },

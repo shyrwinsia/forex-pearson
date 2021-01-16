@@ -38,13 +38,14 @@ var fs = require('fs');
 var request = require('request-promise');
 var promisify = require('util').promisify;
 var writeFile = promisify(fs.writeFile);
+var readFile = promisify(fs.readFile);
 function getCsvFromUrl(url) {
     return __awaiter(this, void 0, void 0, function () {
         var contents, contents_1, err_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    console.log('Fetching from:  ' + url);
+                    console.log('Fetching from: ' + url);
                     _a.label = 1;
                 case 1:
                     _a.trys.push([1, 3, , 4]);
@@ -85,27 +86,8 @@ function processData(contents) {
     });
     return quotes;
 }
-function filterData(quotes, whitelist) {
-    if (!whitelist) {
-        console.log('Applying filters. No whitelist found! Showing everything.');
-        return quotes;
-    }
-    else {
-        console.log('Applying filters. Whitelist: ' + whitelist);
-        return quotes.filter(function (i) {
-            if (whitelist.includes(i['base'].slice(0, 3)) &&
-                whitelist.includes(i['base'].slice(-3)) &&
-                whitelist.includes(i['quote'].slice(0, 3)) &&
-                whitelist.includes(i['quote'].slice(-3))) {
-                return true;
-            }
-            else
-                return false;
-        });
-    }
-}
 function constructJson(data) {
-    console.log('Reticulating splines');
+    console.log('Constructing graph');
     var nodes = [];
     var links = [];
     data.map(function (i) {
@@ -136,7 +118,7 @@ function writeJsonToFile(json) {
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, writeFile('correlation.json', JSON.stringify(json, null, 2))];
+                case 0: return [4 /*yield*/, writeFile('public/correlation.json', JSON.stringify(json, null, 2))];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
@@ -146,18 +128,26 @@ function writeJsonToFile(json) {
 }
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contents, quotes, whitelist, filtered, json;
+        var fileContents, lines, params, contents, quotes, json;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, getCsvFromUrl('https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv')];
+                case 0: return [4 /*yield*/, readFile('whitelist.txt', 'UTF-8')];
                 case 1:
+                    fileContents = _a.sent();
+                    lines = fileContents.split(/\r?\n/);
+                    params = '';
+                    lines.forEach(function (line) {
+                        console.log(line);
+                        params += line + "|";
+                    });
+                    params = params.slice(0, -1);
+                    return [4 /*yield*/, getCsvFromUrl('https://www.mataf.io/api/tools/csv/correl/snapshot/forex/50/correlation.csv?symbol=' + params)];
+                case 2:
                     contents = _a.sent();
                     quotes = processData(contents);
-                    whitelist = ['AUD', 'USD', 'CHF', 'JPY', 'EUR', 'CAD', 'GBP', 'SGD'];
-                    filtered = filterData(quotes);
-                    json = constructJson(filtered);
+                    json = constructJson(quotes);
                     return [4 /*yield*/, writeJsonToFile(json)];
-                case 2:
+                case 3:
                     _a.sent();
                     return [2 /*return*/];
             }

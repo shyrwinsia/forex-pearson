@@ -19,24 +19,28 @@ You need to have npm installed. You can download it [here](https://nodejs.org/en
 To install the dependencies, run this command:
 
 ```
-npm install
+yarn install
 ```
 
 The source code is written in Typescript so it has to be translated to Javascript. To do this, run this command:
 
 ```
-npm run-script build
+yarn run build
 ```
 
 ## Running
 
-To run the script, run this command:
+### To fetch the latest data:
 
 ```
-npm start
+yarn run fetch
 ```
 
-Then run the index.html
+### To run the http server:
+
+```
+yarn start
+```
 
 # Todo
 
